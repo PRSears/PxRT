@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using System.Collections.Generic;
+using System.Drawing;
 
 
 namespace PxRT
@@ -217,8 +217,8 @@ namespace PxRT
 
             for (int y = 0; y < this.Height; y++)
             {
-		// pointer to the first byte in the row
-		byte* row = (byte*)Scan0ptr + (y * Stride);
+        // pointer to the first byte in the row
+        byte* row = (byte*)Scan0ptr + (y * Stride);
                 for (int x = 0; x < this.Width; x++)
                 {
                     byte[] subpixels = new byte[PixelSize];
@@ -226,7 +226,7 @@ namespace PxRT
                     {
                         subpixels[i] = row[(x * PixelSize) + i]; 
                     }
-		    pixels[(y * Width) + x] = new Pixel(subpixels);
+            pixels[(y * Width) + x] = new Pixel(subpixels);
                 }
             }
 
@@ -247,10 +247,10 @@ namespace PxRT
                 byte* row = (byte*)this.Scan0ptr + (y * this.Stride);
                 for (int x = 0; x < this.Width; x++)
                 {
-		    byte[] subpixels = pixels[(y * this.Width) + x].ToBytes();
+            byte[] subpixels = pixels[(y * this.Width) + x].ToBytes();
                     for (int i = 0; i < this.PixelSize; i++)
                     {
-			row[(x*PixelSize) + i] = subpixels[i]; 
+            row[(x*PixelSize) + i] = subpixels[i]; 
                     }
                 }
             }

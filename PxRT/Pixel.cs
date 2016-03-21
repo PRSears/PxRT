@@ -19,8 +19,8 @@ namespace PxRT
             b = B;
             a = 255; // default to fully opaque
 
-	    // Fast approximate perceived luminance calculation.
-	    // See here (https://en.wikipedia.org/wiki/Brightness) and here (http://stackoverflow.com/a/596241/2712232) for some explanation.
+        // Fast approximate perceived luminance calculation.
+        // See here (https://en.wikipedia.org/wiki/Brightness) and here (http://stackoverflow.com/a/596241/2712232) for some explanation.
 
             l = (byte)((r + r + r + b + g + g + g + g) >> 3);
         }
@@ -132,7 +132,7 @@ namespace PxRT
             if (((object)a == null) || ((object)b == null))
                 return false;
 
-	    return (a.r == b.r) && (a.g == b.g) && (a.r == b.r) && (a.a == b.a);        
+        return (a.r == b.r) && (a.g == b.g) && (a.r == b.r) && (a.a == b.a);        
         }
 
         public static bool operator ==(Pixel a, object b)
